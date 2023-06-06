@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useStates } from './States'
 import TextField from "@mui/material/TextField"
+import { toast, ToastContainer } from 'react-toastify';
 import Button from "@mui/material/Button"
 
  function Edit(){
@@ -36,7 +37,12 @@ import Button from "@mui/material/Button"
         })
         .then((res)=>{
             console.log(res);
-            getAllMovies()
+            getAllMovies();
+            toast.success("updated successful");
+    setTimeout(() => {
+      
+      navigate("/book");
+    }, 2000);
         });
         navigate("/book");
     };
@@ -47,6 +53,18 @@ import Button from "@mui/material/Button"
 
     return(
         <div className='editbody'>
+            <ToastContainer
+position="top-center"
+autoClose={3000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+/>
         <div className='textfields'>
             <div className="Bookname">
                 <TextField

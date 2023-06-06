@@ -88,7 +88,7 @@ value={password} placeholder='password' type="password" required/>
 
 <button onClick={handleSubmit} className="btn" type="submit">Submit</button>
 <h3>New User?<Link to='/s' style={{textDecoration:'none'}}> signup</Link></h3>
- <h3><Link to='/f' style={{textDecoration:'none'}}> forget password?</Link></h3> 
+ {/* <h3><Link to='/f' style={{textDecoration:'none'}}> forget password?</Link></h3>  */}
 </form>
 </div>
 </div>

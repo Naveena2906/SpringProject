@@ -5,6 +5,7 @@ import axios from 'axios'
 import { useStates } from './States'
 import TextField from "@mui/material/TextField"
 import Button from "@mui/material/Button"
+import { toast, ToastContainer } from 'react-toastify';
 import './App.css';
 
  function AddBooks(){
@@ -30,6 +31,11 @@ import './App.css';
         .then((res)=>{
             console.log(res);
             getAllMovies();
+            toast.success(bookname+ " added");
+    setTimeout(() => {
+      
+      navigate("/book");
+    }, 2000);
         });
         navigate("/book");  
         
@@ -42,6 +48,18 @@ import './App.css';
 
     return(
         <div className='addbody'>
+               <ToastContainer
+position="top-center"
+autoClose={3000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+/>
         <div className='textfields'>
             <div className="Moviename">
                 <TextField

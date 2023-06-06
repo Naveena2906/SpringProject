@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
+import {AppBar,Toolbar,Stack,Icon,Typography} from "@mui/material";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Button from "@mui/material/Button";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
@@ -12,6 +14,14 @@ import "./Books.css"
 export const Books = () => {
 
   const {editMovie,setEditMovie,movies, setMovies,getAllMovies} =useStates();
+  
+
+  // const [searchvalue,setSearchvalue]=useState("");
+  // useEffect(()=>{
+  //   getAllMovies();
+  // },[searchvalue]);
+  
+
   const navigate=useNavigate();
   
   useEffect(() => {
@@ -34,6 +44,20 @@ const AddMovie =() =>{
   navigate("/add")
 }
 
+const Logout = () => {
+  navigate("/l");
+};
+
+
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#1976d2',
+    },
+  },
+});
+
   return(
     <div className="tablebody">
       <ToastContainer
@@ -48,11 +72,37 @@ const AddMovie =() =>{
         pauseOnHover
         theme="dark"
       />
+      <div className="navigationbar">
+        <ThemeProvider theme={darkTheme}>
+          <AppBar position="static">
+            <Toolbar>
+              {/* <Icon size="large" edge="start" color="inherit" aria-label="logo" style={{color:'aqua'}}>
+                <CameraRollIcon />
+              </Icon> */}
+              <Typography variant="h6" component="div" sx={{ flexGrow: 2 }} style={{color:'aqua'}}>
+                Bibliophile
+              </Typography>
+              <Stack direction="row" spacing={2}>
+                <Button color="inherit" onClick={AddMovie} style={{color:'aqua'}}>Add Books</Button>
+                {/* <Button color="inherit" onClick={Addreview} style={{color:'aqua'}}>
+                  Review
+                </Button> */}
+                <Button color="inherit" onClick={Logout} style={{color:'aqua'}}>
+                  Logout
+                </Button>
+              </Stack>
+            </Toolbar>
+          </AppBar>
+          </ThemeProvider>
+        </div>
+
+                {/* <input className="nav-search" type="text" placeholder="search books">
+                  onChange={(e)=>setSearchvalue(e.target.value)}
+                </input> */}
+
       <div>
         <h3 style={{textAlign:'center'}} >Book Details</h3>
             <div style={{textAlign:'right',marginRight:'15%'}} className='addicon' onClick={()=>{AddMovie()}}>
-              {/* <h4>Add Books</h4>
-              <AddCircleOutlinedIcon /> */}
               <Button  variant='contained' color="success">
                     Add Books
                 </Button>
