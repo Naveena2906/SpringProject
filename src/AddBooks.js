@@ -31,13 +31,13 @@ import './App.css';
         .then((res)=>{
             console.log(res);
             getAllMovies();
-            toast.success(bookname+ " added");
-    setTimeout(() => {
-      
-      navigate("/book");
-    }, 2000);
         });
-        navigate("/book");  
+        toast.success(bookname+ " added");
+        setTimeout(() => {
+          
+          navigate("/book");
+        }, 2000);
+        // navigate("/book");  
         
         //  navigate("/adds");
         

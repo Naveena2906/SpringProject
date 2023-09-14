@@ -9,7 +9,10 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useStates } from "./States";
+import MenuBookRoundedIcon from '@mui/icons-material/MenuBookRounded';
+// import { motion } from "framer-motion";
 import "./Books.css"
+import Navbar from "./Navbar";
 
 export const Books = () => {
 
@@ -73,13 +76,23 @@ const darkTheme = createTheme({
         theme="dark"
       />
       <div className="navigationbar">
+
+
+
+
+     
+
+
+
+
+
         <ThemeProvider theme={darkTheme}>
           <AppBar position="static">
             <Toolbar>
               {/* <Icon size="large" edge="start" color="inherit" aria-label="logo" style={{color:'aqua'}}>
                 <CameraRollIcon />
               </Icon> */}
-              <Typography variant="h6" component="div" sx={{ flexGrow: 2 }} style={{color:'aqua'}}>
+              <Typography  variant="h6" component="div" sx={{ flexGrow: 2 }} style={{color:'aqua'}}>
                 Bibliophile
               </Typography>
               <Stack direction="row" spacing={2}>
@@ -87,6 +100,7 @@ const darkTheme = createTheme({
                 {/* <Button color="inherit" onClick={Addreview} style={{color:'aqua'}}>
                   Review
                 </Button> */}
+                <Navbar/>
                 <Button color="inherit" onClick={Logout} style={{color:'aqua'}}>
                   Logout
                 </Button>
@@ -101,11 +115,11 @@ const darkTheme = createTheme({
                 </input> */}
 
       <div>
-        <h3 style={{textAlign:'center'}} >Book Details</h3>
+        <h3 style={{textAlign:'center'}} className="h3">Book Details</h3>
             <div style={{textAlign:'right',marginRight:'15%'}} className='addicon' onClick={()=>{AddMovie()}}>
-              <Button  variant='contained' color="success">
+              {/* <Button  variant='contained' color="success">
                     Add Books
-                </Button>
+                </Button> */}
             </div>
         <div className='table'>
           <table>
@@ -123,6 +137,7 @@ const darkTheme = createTheme({
           <br/>
         { movies.map((movie) => {
           return (
+            
             <tr>
             <td> {movie.bookname} </td>
             <td> {movie.author} </td>

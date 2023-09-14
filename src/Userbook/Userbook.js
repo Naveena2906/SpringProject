@@ -8,14 +8,22 @@ import { useNavigate } from "react-router-dom";
 import { useStates } from "../States";
 import {AppBar,Toolbar,Stack,Icon,Typography} from "@mui/material";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import '../App.css';
+  import '../App.css';
+//  import '../Userbook.css';
+//  import '../Userbook/Userbook.css';
 import Navbar from "../Navbar";
-
+import "react-toastify/dist/ReactToastify.css";
+import { toast, ToastContainer } from "react-toastify";
+import {Grid} from "@mui/material";
+import CameraRollIcon from "@mui/icons-material/CameraRoll";
 export const Userbook = () => {
 
   const {editMovie,setEditMovie,movies, setMovies,getAllMovies} =useStates();
 
- 
+  
+    // useEffect(() => {
+    //   getAllMovies();
+    // }, [searchvalue]);
 
   const navigate=useNavigate();
   
@@ -47,6 +55,19 @@ const Logout = () => {
 };
 
 
+const tamil = () => {
+  navigate("/tamilbooks");
+};
+const english = () => {
+  navigate("/englishbooks");
+};
+const hindi = () => {
+  navigate("/hindibooks");
+};
+
+
+
+
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
@@ -57,23 +78,43 @@ const darkTheme = createTheme({
 });
 
   return(
-    <div className="tablebody">
+    <div className="dbbody">
+    <div className="tablesbody">
+      <ToastContainer
+        position="top-center"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+      </div>
+      {/* <div></div> */}
        <div className="navigationbar">
         <ThemeProvider theme={darkTheme}>
           <AppBar position="static">
             <Toolbar>
-              {/* <Icon size="large" edge="start" color="inherit" aria-label="logo" style={{color:'aqua'}}>
+               {/* <Icon size="large" edge="start" color="inherit" aria-label="logo" style={{color:'aqua'}}>
                 <CameraRollIcon />
-              </Icon> */}
-              <Typography variant="h6" component="div" sx={{ flexGrow: 2 }} style={{color:'aqua'}}>
+              </Icon>  */}
+              <Typography variant="h6" component="div" sx={{ flexGrow: 2 }} style={{color:'aqua'}} fontSize={'2.0em'}  >
                 Bibliophile
               </Typography>
+              {/* <div className="book">BOOK DETAILS</div> */}
+              {/* <div className="navbar-body">
+        <input className="nav-search" type="text"  onChange={(e) => setSearchvalue(e.target.value)} placeholder="Search Books"/>
+    </div> */}
               <Stack direction="row" spacing={2}>
                 {/* <Button color="inherit" onClick={AddMovie} style={{color:'aqua'}}>Add Books</Button> */}
                 {/* <Button color="inherit" onClick={Addreview} style={{color:'aqua'}}>
                   Review
                 </Button> */}
-                <Button color="inherit" onClick={Logout} style={{color:'aqua'}}>
+                 <Navbar/>
+                <Button color="inherit" onClick={Logout} style={{color:'aqua'}} >
                   Logout
                 </Button>
               </Stack>
@@ -82,15 +123,26 @@ const darkTheme = createTheme({
           </ThemeProvider>
         </div>
       <div>
-        <h3 style={{textAlign:'center'}} >Book Details</h3>
-        <Navbar/>
+         {/* <h3 style={{textAlign:'center'}} className="h3">Book Details</h3>  */}
+
+
+        <div className="languageatuser">
+        <Grid container spacing={2}>
+        <Grid item><Button   variant="contained"    className="language1" onClick={tamil}>Tamil</Button></Grid>
+        <Grid item><Button   variant="contained"  className="language2" onClick={english}>english</Button></Grid>
+        <Grid item><Button   variant="contained"  className="language3" onClick={hindi}>hindi</Button></Grid>
+        </Grid>
+        </div>
+
+
+       
             {/* <div style={{textAlign:'right',marginRight:'15%'}} className='addicon' onClick={()=>{AddMovie()}}>
               <h4>Add Books</h4>
               <AddCircleOutlinedIcon />
             </div> */}
         <div className='table'>
-          <table>
-          <tr>
+           <table>
+           <tr>
             <th>Bookname</th>
             <th>Author</th>
             <th>Genere</th>
@@ -99,35 +151,37 @@ const darkTheme = createTheme({
             <th>Edition</th>
             <th>Number of Pages</th>
             
-          </tr>
-          <br/>
-        { movies.map((movie) => {
-          return (
-            <tr>
-            <td> {movie.bookname} </td>
-            <td> {movie.author} </td>
-            <td> {movie.genere} </td>
-            <td> {movie.publication} </td>
-            <td> {movie.language} </td>
-            <td> {movie.edition} </td>
-            <td> {movie.numberofpages} </td>
+          </tr>  
+            <br/>
+         
+{ movies.map((movie) => {
+  return (
             
-            {/* <td>
-            <div className='editicon' onClick={()=>{updateMovie();setEditMovie(movie)}}>
-              <ModeEditOutlineOutlinedIcon />
-            </div>
-            </td>
-            <td>
-            <div className='removeicon' onClick={()=> deleteMovie(movie.bookname)}>
-              <RemoveCircleOutlineIcon />
-            </div>
-            </td> */}
-            </tr>
-          )    
-      })}
-      </table>
-      </div>
-      </div>
-      </div>
-  )
+            
+    <tr>
+    <td> {movie.bookname} </td>
+    <td> {movie.author} </td>
+    <td> {movie.genere} </td>
+    <td> {movie.publication} </td>
+    <td> {movie.language} </td>
+    <td> {movie.edition} </td>
+    <td> {movie.numberofpages} </td>
+    {/* <td> */}
+    {/* <div className='editicon' onClick={()=>{updateMovie();setEditMovie(movie)}}>
+      <ModeEditOutlineOutlinedIcon />
+    </div> */}
+    {/* </td>
+    <td> */}
+    {/* <div className='removeicon' onClick={()=> deleteMovie(movie.bookname)}>
+      <RemoveCircleOutlineIcon />
+    </div> */}
+    {/* </td> */}
+    </tr>
+  )    
+})}
+</table>
+</div>
+</div>
+</div>
+)
 };

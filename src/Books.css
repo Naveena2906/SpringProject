@@ -46,6 +46,7 @@
     background-repeat: no-repeat;
   }
   
+  
   .header{
     height:100px;
     width:100%;
@@ -144,6 +145,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      /* color: black; */
   }
   
   .table td{
@@ -214,4 +216,22 @@
   .addicon{
     padding-bottom: 10px;
   }
+     .tablebody{
+    /* background-image: url("https://png.pngtree.com/back_origin_pic/03/88/19/883f1b0ddd7c6f341e3357fd964b2bfa.jpg"); */
+     background-image: url("https://tse2.mm.bing.net/th?id=OIP.qVwOFUUq2wnJjQm6_80nCgHaEK&pid=Api&P=0&h=180"); 
+    /* background-image: url("https://www.wallpaperflare.com/static/321/637/182/book-star-open-book-magic-wallpaper.jpg"); */
+    background-repeat: no-repeat;
+
+    background-position: center center;
+     background-size: cover; 
+     min-height: 100vh;
+    height: 500%;
+    margin: 0%;
+    padding: 0%;
+
+  }   
+  .h3{
+    margin-top: 2%;
+  }
+
   

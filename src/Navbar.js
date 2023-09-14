@@ -12,12 +12,10 @@ const Navbar = () => {
   }, [searchvalue]);
 
   return (
-    <div className="navbar-container">
-      <div className="but-nav">
-        <input className="nav-search" type="text"  onChange={(e) => setSearchvalue(e.target.value)} placeholder="search books"/>
-      </div>
+    <div className="navbar-body">
+        <input className="nav-search" type="text"  onChange={(e) => setSearchvalue(e.target.value)} placeholder="Search Books"/>
     </div>
   );
 };
 
-export default Navbar;
+ export default Navbar;

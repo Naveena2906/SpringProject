@@ -1,10 +1,10 @@
 import './Login.css';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';   
 import axios from 'axios';
 import "react-toastify/dist/ReactToastify.css";
- import image from "../src/image/image.jpg"
+//  import image from "../src/image/image.jpg"
 export default function Login() {
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
@@ -73,6 +73,7 @@ draggable
 pauseOnHover
 theme="dark"
 />
+
 <div className='formlogin'>
 <form>
 
@@ -89,8 +90,12 @@ value={password} placeholder='password' type="password" required/>
 <button onClick={handleSubmit} className="btn" type="submit">Submit</button>
 <h3>New User?<Link to='/s' style={{textDecoration:'none'}}> signup</Link></h3>
  {/* <h3><Link to='/f' style={{textDecoration:'none'}}> forget password?</Link></h3>  */}
+ 
+ 
 </form>
+
 </div>
 </div>
+
 );
 }

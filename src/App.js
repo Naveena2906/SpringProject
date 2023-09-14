@@ -13,6 +13,11 @@ import Navbar from "./Navbar";
 import Landing from "./Landing";
 import { Forget } from "./Forget";
 import { Userbook } from "./Userbook/Userbook";
+import { Explore } from "./Explore/Explore";
+import { Tamil } from "./Tamil/Tamil";
+import { English } from "./English/English";
+import { Hindi } from "./Hindi/Hindi";
+// import Home from "./Home/Home";
 // import AboutUs from "./AboutUs";
 
 
@@ -34,10 +39,17 @@ function App() {
             <Route path="land" element={<Landing/>}/>
             <Route path="/f" element={<Forget/>}/>
             <Route path="/user" element={<Userbook/>}/>
+            <Route path="/e" element={<Explore/>}/>
+            <Route path="/tamilbooks" element={<Tamil/>}/>
+            <Route path="/englishbooks" element={<English/>}/>
+            <Route path="/hindibooks" element={<Hindi/>}/>
             </Routes>
         </States>             
       </BrowserRouter>
+
+    
     </div>
+    
   );
 }
 export default App;

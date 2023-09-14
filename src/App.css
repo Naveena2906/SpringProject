@@ -211,10 +211,9 @@ body{
   font-size: 20px;
   cursor: pointer;
 }
-.library{
+/* .library{
    background-image: url("https://tse4.mm.bing.net/th?id=OIP.yL5eC141OeKrsXDmjFJrqgHaD-&pid=Api&P=0&h=180"); 
-  /* background-image: url("https://ak3.picdn.net/shutterstock/videos/20344783/thumb/1.jpg?i10c=img.resize(height:160)"); */
-   background-repeat: no-repeat;
+  background-repeat: no-repeat;
    background-size: 100%;
    height: 500%;
    font-weight:initial;
@@ -222,7 +221,7 @@ body{
     filter: brightness(0.4); 
   
     
-}
+} */
 h1{
   color:blue;
 }
@@ -275,4 +274,95 @@ h1{
     position: relative;
     left:10px;
   }
+
+  .navbar-body{
+    /* margin-top: -7%; */
+    /* height: 30%; */
+    padding-bottom: 10px;
+    margin-left: 3%;
+  }
+  .nav-search{
+    width:15vw;
+    /* border-radius: 5%; */
+    /* margin-top: -30%; */
+    margin-left:-630px;
+    height:4vh;
+  }
+  .nav-search::placeholder{
+    font-size: large;
+    padding-left: 20px;
+  }
+  .nav-search::input{
+    font-size: large;
+  }
+  .nav-search{
+    font-size: -100%;
+  }
+  .signupbody{
+    background-image: url("https://img.freepik.com/free-photo/book-stack-library-room-blurred-bookshelf-background_42691-514.jpg?size=626&ext=jpg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     background-repeat: no-repeat; 
+     height: 100vh;
+     width: 100%;
+  background-size: cover; 
   
+  }
+  .formsign{
+    background-color: azure;
+    border-radius: 8px;
+        width: 400px;
+        margin:  auto;
+        padding: 5px;
+  }
+
+
+  /* .language1{
+    position: relative;
+    left:20px;
+}
+.language2{
+    position: relative;
+    left:20px;
+}
+.language3{
+    position: relative;
+    left:20px;
+}
+.langatlang{
+    position: relative;
+    left:30%;
+} */
+ .h3{
+  margin-top: 2%;
+} 
+.book{
+  margin-right: 44%;
+  /* margin-top: 2%; */
+  /* font-size: %; */
+  font-weight: 10em;
+}
+/* .tablesbody{
+  background-image: url("https://tse4.mm.bing.net/th?id=OIP.5z9hKW_mAyIkwRcEUhuE0gHaGD&pid=Api&P=0&h=180");
+    background-repeat: no-repeat;
+
+    background-position: center center;
+     background-size: cover; 
+     min-height: 100vh;
+    /* height: 500%; */
+    /* margin: 0%;
+    padding: 0%; */
+/* }  */
+
+/* background-image: url("https://png.pngtree.com/back_origin_pic/03/88/19/883f1b0ddd7c6f341e3357fd964b2bfa.jpg"); */
+.dbbody{
+  background-image: url("https://png.pngtree.com/back_origin_pic/03/88/19/883f1b0ddd7c6f341e3357fd964b2bfa.jpg");
+  min-height: 100vh;
+}
+.languageatuser{
+  position: relative;
+  left:40%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
