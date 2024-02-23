@@ -62,16 +62,16 @@ return (
 <div className="loginbody" >
  {/* <img src={image1} className='image'/>  */}
 <ToastContainer
-position="top-center"
-autoClose={3000}
+// position="top-center"
+// autoClose={3000}
 hideProgressBar={false}
 newestOnTop={false}
 closeOnClick
 rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="dark"
+// pauseOnFocusLoss
+// draggable
+// pauseOnHover
+// theme="dark"
 />
 
 <div className='formlogin'>
