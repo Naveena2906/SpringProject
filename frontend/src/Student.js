@@ -35,7 +35,7 @@ const AddMovies =() =>{
       <div>
         <h3 style={{textAlign:'center'}} >Student Details</h3>
             <div style={{textAlign:'right',marginRight:'15%'}} className='addicon' onClick={()=>{AddMovies()}}>
-              <h4>Add Books</h4>
+              <h4>Add Studentdetail</h4>
               <AddCircleOutlinedIcon />
             </div>
         <div className='table'>
@@ -57,28 +57,28 @@ const AddMovies =() =>{
             <th>Remove</th>
           </tr>
           <br/>
-        { movies.map((book) => {
+        { movies.map((movie) => {
           return (
             <tr>
-            <td> {book.studentid} </td>
-            <td> {book.studentname} </td>
-            <td> {book.dob} </td>
-            <td> {book.bookid} </td>
-            <td> {book.booktitle} </td>
-            <td> {book.bookauthor} </td>
-            <td> {book.price} </td>
-            <td> {book.dateborrowed} </td>
-            <td> {book.dateoverdue} </td>
-            <td> {book.datedueback} </td>
-            <td> {book.datereturned} </td>
-            <td> {book.latereturnfine} </td>
+            <td> {movie.studentid} </td>
+            <td> {movie.studentname} </td>
+            <td> {movie.dob} </td>
+            <td> {movie.bookid} </td>
+            <td> {movie.booktitle} </td>
+            <td> {movie.bookauthor} </td>
+            <td> {movie.price} </td>
+            <td> {movie.dateborrowed} </td>
+            <td> {movie.dateoverdue} </td>
+            <td> {movie.datedueback} </td>
+            <td> {movie.datereturned} </td>
+            <td> {movie.latereturnfine} </td>
             <td>
-            <div className='editicon' onClick={()=>{updateMovies();setEditMovie(book)}}>
+            <div className='editicon' onClick={()=>{updateMovies();setEditMovie(movie)}}>
               <ModeEditOutlineOutlinedIcon />
             </div>
             </td>
             <td>
-            <div className='removeicon' onClick={()=> deleteMovies(book.studentid)}>
+            <div className='removeicon' onClick={()=> deleteMovies(movie.studentid)}>
               <RemoveCircleOutlineIcon />
             </div>
             </td>

@@ -5,8 +5,11 @@ import axios from 'axios'
 import { useStates } from './States'
 import TextField from "@mui/material/TextField"
 import Button from "@mui/material/Button"
+import { toast, ToastContainer } from 'react-toastify';
+import './App.css';
 
  function AddBooks(){
+    const navigate=useNavigate();
     const[bookname,setBookname]=useState("");
     const[author,setAuthor]=useState("");
     const[genere,setGenere]=useState("");
@@ -16,7 +19,7 @@ import Button from "@mui/material/Button"
     const[numberofpages,setNumberofpages]=useState("");
     const {editMovie,getAllMovies} =useStates();
     const Moviedetails=()=>{
-        axios.put(`http://localhost:8080/update/book/${bookname}`,{
+        axios.post("http://localhost:8080/save/book",{
            bookname:bookname,
            author:author,
            genere:genere,
@@ -27,17 +30,37 @@ import Button from "@mui/material/Button"
         })
         .then((res)=>{
             console.log(res);
+            getAllMovies();
         });
-        getAllMovies()
-        navigate("/book");
+        toast.success(bookname+ " added");
+        setTimeout(() => {
+          
+          navigate("/book");
+        }, 2000);
+        // navigate("/book");  
+        
+        //  navigate("/adds");
+        
     };
-    const navigate=useNavigate();
     const gotoDb=()=>{
         navigate("/book");
     }
 
     return(
-        <>
+        <div className='addbody'>
+               <ToastContainer
+position="top-center"
+autoClose={3000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+/>
+        <div className='textfields'>
             <div className="Moviename">
                 <TextField
                     onChange={(e)=>setBookname(e.target.value)}
@@ -101,17 +124,16 @@ import Button from "@mui/material/Button"
                     variant='outlined'
                 />
             </div>
-            <div className='Get'>
-                <Button className="getbutton" variant='outlined' color="primary"  onClick={gotoDb}>
+            <div className='addbutton'>
+                <Button className="getbutton" variant='contained' color="error" onClick={gotoDb}>
                     Cancel
                 </Button>
-             </div>   
-            <div className='post'>
-                <Button  variant='outlined' color="primary" size='small'  onClick={()=>Moviedetails()}>
+                <Button  variant='contained' color="success"  className='addatadd' onClick={()=>Moviedetails()}>
                     Add
                 </Button>
-             </div>   
-        </>
+             </div>  
+        </div>
+        </div>
     );
 };
 

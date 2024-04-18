@@ -60,7 +60,11 @@ axios.post("http://localhost:8080/save/signup",
   console.log(res.data);
   if(res.data==='Signup successful')
   {
-    navigate("/h")
+    toast.success("signup successful");
+    setTimeout(() => {
+      
+      navigate("/user");
+    }, 2000);
   }
   else{
     toast.error(res.data);
@@ -70,7 +74,7 @@ axios.post("http://localhost:8080/save/signup",
 };
 
 return (
-<div className="form">
+<div className="signupbody">
 
 <form>
 <ToastContainer
@@ -85,6 +89,7 @@ draggable
 pauseOnHover
 theme="dark"
 />
+<div className='formsign'>
 {/* Labels and inputs for form data */}
 <label className="label">Name</label>
 <input onChange={handleName} className="input" value={name} placeholder='username' type="text"  required/>
@@ -98,16 +103,17 @@ theme="dark"
 <label className="label">Confirm Password</label>
 <input onChange={handleConfirmPassword} className="input" value={confirmpassword} placeholder='password' type="password" />
 
-<label className="label">Department</label>
-<input onChange={handleDepartment} className="input" value={department} placeholder='department' type="password" />
+{/* <label className="label">Department</label>
+<input onChange={handleDepartment} className="input" value={department} placeholder='department' type="text" />
 
 
 <label className="label">Year</label>
-<input onChange={handleYear} className="input" value={year} placeholder='year' type="text" />
+<input onChange={handleYear} className="input" value={year} placeholder='year' type="text" /> */}
 
 
 <button onClick={handleSubmit} className="btn" type="submit">Submit</button>
 <h3>Already a existing account?<Link to='/l' style={{textDecoration:'none'}}>Login</Link></h3>
+</div>
 </form>
 </div>
 );

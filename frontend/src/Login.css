@@ -1,0 +1,103 @@
+.loginbody{
+    text-align: center;
+    background: #bdc3c7;  /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to right, #2c3e50, #bdc3c7); */
+    background: url("https://img.freepik.com/free-photo/book-stack-library-room-blurred-bookshelf-background_42691-514.jpg?size=626&ext=jpg");
+    height: 100vh;
+    width: 100%;
+ background-size: cover; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     background-repeat: no-repeat; 
+    }
+    
+    .labellogin{
+    display: block;
+    font-size: larger;
+    color: white;
+    padding: 10px;
+    text-align: 10%;
+    }
+    
+    
+    .inputlogin{
+    font-size: larger;
+    padding: 5px;
+    margin: 2px;
+    
+    }
+    .btnlogin{
+    color: white;
+    background-color: blueviolet;
+    border-radius: 9px;
+    font-size: larger;
+    display: block;
+    padding: 7px;
+    margin: 15px auto;
+    }
+    .formlogin{
+        /* background-color: rgba(23, 23, 54, 0.555); */
+        background-color: azure;
+        border-radius: 8px;
+        width: 400px;
+        margin:  auto;
+        padding: 5px;
+        /* margin-left: 15%; */
+        /* margin-right: 15%; */
+        
+    }
+
+    /* .formlogin{
+        animation-duration: 2s;
+        animation-name: slide1;
+      } */
+      @keyframes slide1{
+        from {
+          margin-top: 0%;
+        }
+        to {
+          margin-top: 10%;
+        }
+      }
+      .adminlogin{
+        background-color: azure;
+        border-radius: 8px;
+        width: 400px;
+        /* margin:  auto; */
+        padding: 5px;
+        margin-right: 10%;
+        /* margin-left: 0%; */
+      }
+      .labellogins{
+        display: block;
+        font-size: larger;
+        color: white;
+        padding: 10px;
+        text-align: 10%;
+      }
+      .inputlogins{
+        font-size: larger;
+    padding: 5px;
+    margin: 2px;
+      }
+      .formlogins{
+        background-color: azure;
+        border-radius: 8px;
+        width: 400px;
+        margin:  auto;
+        padding: 5px;
+        height: 38%;
+        margin-right: 22%;
+      }
+      .log{
+        margin-top: -24%;
+        margin-right: -34%;
+        /* margin-left: 0.555%; */
+      }
+      .logs{
+         margin-top: -24%; 
+         margin-left: -15%; 
+        /* margin-right: -1%; */
+      }

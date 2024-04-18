@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useStates } from './States'
 import TextField from "@mui/material/TextField"
+import { toast, ToastContainer } from 'react-toastify';
 import Button from "@mui/material/Button"
 
  function Edit(){
@@ -36,8 +37,13 @@ import Button from "@mui/material/Button"
         })
         .then((res)=>{
             console.log(res);
+            getAllMovies();
+            toast.success("updated successful");
+    setTimeout(() => {
+      
+      navigate("/book");
+    }, 2000);
         });
-        getAllMovies()
         navigate("/book");
     };
     const navigate=useNavigate();
@@ -46,7 +52,20 @@ import Button from "@mui/material/Button"
     }
 
     return(
-        <>
+        <div className='editbody'>
+            <ToastContainer
+position="top-center"
+autoClose={3000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="dark"
+/>
+        <div className='textfields'>
             <div className="Bookname">
                 <TextField
                     onChange={(e)=>setBookname(e.target.value)}
@@ -110,17 +129,16 @@ import Button from "@mui/material/Button"
                     variant='outlined'
                 />
             </div>
-            <div className='Get'>
-                <Button className="getbutton" variant='outlined' color="primary" onClick={gotoDb}>
+            <div className='editbutton'>
+                <Button className="getbutton" variant='contained' color="error" onClick={gotoDb}>
                     Cancel
-                </Button>
-             </div>   
-            <div className='post'>
-                <Button  variant='outlined' color="primary" size='small'  onClick={()=>Moviedetails(editMovie.bookname)}>
+                </Button>  
+                <Button  variant='contained' color="success" className='updateatedit' onClick={()=>Moviedetails(editMovie.bookname)}>
                     Update
                 </Button>
-             </div>   
-        </>
+            </div>   
+        </div>
+        </div>
     );
 };
 

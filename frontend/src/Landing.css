@@ -1,0 +1,265 @@
+/* .pic{
+    background-image: url("http://prodimage.images-bn.com/pimages/9788184936834_p0_v2_s1200x630.jpg");
+} */
+
+
+.homeimage{
+  width:40%;
+  height: 40%;
+  margin-top: 8%;
+}
+.homeimage2{
+  width:40%;
+  height: 40%;
+  margin-left: 50px;
+}
+.homebtn{
+  /* padding: 50px; */
+  transition: transform .2s; /* Animation */
+  margin: 0 auto;
+}
+.homebtn:hover{
+  transform: scale(1.1);
+}
+
+.title1{
+  /* margin-left:10px; */
+ margin-top: -10px;  
+}
+
+.title2{
+  /* margin-left:20px; */
+ margin-top: -10px;  
+}
+.homedatas{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-right: 80px;
+  margin-left: 10px;
+  margin-top: 30px;
+  padding-bottom: 15px;
+  border:3px solid gray;
+  border-radius: 10px;
+}
+.homedatas_text{
+  margin-left: 200px;
+  margin-right: 20px;
+  margin-top: 80px;
+}
+
+.homeimage{
+  padding: 50px;
+  transition: transform .2s; /* Animation */
+  margin: 0 auto;
+}
+
+.homeimage:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.hm1{
+  height: 320px;
+  padding-top: 12px;
+  margin-bottom: 6px;
+  padding-left:10px;
+  margin-left: px;
+  /* border:1px solid aqua; */
+}
+.homemovie{
+  /* border:3px solid gray; */
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 70px;
+  margin-top: 15px;
+}
+.homediv{
+  background-color: black;
+}
+
+.hm1{
+  /* padding: 50px; */
+  transition: transform .2s; /* Animation */
+}
+
+.hm1:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+
+.title1{
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+@keyframes slidein{
+  from {
+    margin-left: 30%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+.title{
+  animation-duration: 2s;
+  animation-name: slideout;
+}
+@keyframes slideout{
+  from {
+    margin-left: 30%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+.title2{
+  animation-duration: 4s;
+  animation-name: slide;
+}
+@keyframes slide{
+  from {
+    margin-left: 10%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+.library{
+  /* background-image: url("https://wallpaperaccess.com/full/3847398.jpg");
+  background-size: 100%;
+  background-size: cover;
+  width: 100%;
+ 
+  background-blend-mode: hard-light; */
+  background-image: url("https://www.pexels.com/video/woman-reading-inside-a-library-854416/");
+ 
+}
+*{
+  margin: 0;
+  box-sizing: border-box;
+    /* color: white;  */
+}
+@font-face {
+  font-family: 'merianda';
+  src: url("")format('woff2');
+}
+.video{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  transition: o.5s;
+  font-family: "Marianda";
+}
+.video-bg{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  object-fit: cover;
+}
+.bg-overlay{
+  height: 100%;
+  width: 100%;
+  background-color:rgba(0,0,0, 0.5);
+  position: absolute;
+  top: 0;
+  z-index: 0;
+}
+.navbar{
+  width: 100%;
+  height: 6em;
+   border-bottom: 2px solid white; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 1;
+}
+.menu{
+  height: 3em;
+  width: 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: 2em;
+  cursor: pointer;
+}
+.menu div{
+  width: 90%;
+  height: 0.25em;
+   background-color: white; 
+  border-radius: 1em;
+
+}
+.menu div:nth-of-type(2) {width: 40%;}
+
+.home-text{
+   width: 70%;
+   height: 60%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+   z-index: 2;
+   font-family: "Marianda";
+  text-shadow: 6%;
+}
+h2{
+  font-size: 5em;
+  animation-name: fade;
+  animation-duration: 4s;
+  color:rgb(197, 66, 66);
+  font-style: oblique;
+}
+p{
+  justify-self: flex-end;
+  font-size: 2em;
+  color: white;
+}
+.home-btn{
+  width: 6em;
+  height: 2em;
+   border: 2px solid white; 
+  border-radius: 0.25em;
+  background-color: rgba(255,255,255,0.457);
+  z-index: 1;
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+@keyframes fade{
+  0%{
+    opacity: 0;
+    margin-left: 3em;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.video-text{
+  margin-left: 67%;
+  font-size: 2.8em;
+  cursor: pointer;
+   border: 3px solid white; 
+  padding: 6px;
+  border-radius: 8%;
+  
+  /* color: aquamarine; */
+}
+.video-text1{
+  margin-left: 5%;
+  font-size: 2.7em;
+  cursor: pointer;
+   border: 3px solid white; 
+  padding: 6px;
+  border-radius: 8%;
+}
